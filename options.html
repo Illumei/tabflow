@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="options.css">
+  <title>TabFlow — Настройки</title>
+</head>
+<body>
+  <div class="header">
+    <h1>TabFlow</h1>
+    <button id="btn-theme" class="icon-btn" title="Сменить тему">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+    </button>
+  </div>
+  <p class="sub">Порядок во вкладках без усилий</p>
+
+  <!-- Блок с лицензией -->
+  <section>
+    <h2>Премиум доступ (Pro)</h2>
+    <p style="font-size:13px; color:var(--text-muted); margin-top:0; margin-bottom:12px; line-height: 1.4;">
+      Введите ключ активации, чтобы разблокировать автоусыпление вкладок, защиту от вылетов и неограниченные рабочие пространства.
+    </p>
+    <label class="row column">
+      <span>Лицензионный ключ</span>
+      <input type="text" id="licenseKey" placeholder="TABFLOW-PRO-XXXX" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border); background: var(--input-bg); color: var(--text); margin-top: 8px; outline: none;">
+    </label>
+    <p id="licenseStatus" style="font-size: 13px; font-weight: 600; margin-top: 12px;">Проверка статуса...</p>
+  </section>
+
+  <!-- Секция настроек, которая блокируется без Pro -->
+  <section id="pro-settings" class="locked">
+    <div class="section-header">
+      <h2>Усыпление вкладок</h2>
+      <span class="pro-badge" id="pro-badge">🔒 Требуется Pro</span>
+    </div>
+    <div class="pro-content">
+      <label class="row">
+        <input type="checkbox" id="enabled" disabled>
+        <span>Автоусыпление неактивных вкладок</span>
+      </label>
+      <label class="row">
+        <span>Усыплять через (минут)</span>
+        <input type="number" id="minutes" min="1" max="1440" disabled>
+      </label>
+      <label class="row">
+        <span>Режим</span>
+        <select id="mode" disabled>
+          <option value="discard">Усыплять (сохранять вкладку)</option>
+          <option value="close">Закрывать</option>
+        </select>
+      </label>
+      <label class="row"><input type="checkbox" id="protectPinned" disabled><span>Не трогать закреплённые</span></label>
+      <label class="row"><input type="checkbox" id="protectAudible" disabled><span>Не трогать вкладки со звуком</span></label>
+      <label class="row"><input type="checkbox" id="protectGrouped" disabled><span>Не трогать сгруппированные</span></label>
+      <label class="row column">
+        <span>Белый список доменов (по одному на строку)</span>
+        <textarea id="whitelist" rows="4" placeholder="mail.google.com&#10;github.com" disabled></textarea>
+      </label>
+    </div>
+  </section>
+
+  <div class="save-row">
+    <button id="save">Сохранить настройки</button>
+    <span id="status"></span>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

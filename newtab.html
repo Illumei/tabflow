@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="newtab.css">
+  <title>TabFlow</title>
+</head>
+<body>
+  <div class="dashboard">
+    <header>
+      <div class="logo">
+        <svg viewBox="0 0 128 128" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#14B8A6"/></linearGradient></defs>
+          <rect width="128" height="128" rx="28" fill="url(#g2)"/>
+          <rect x="28" y="36" width="52" height="56" rx="8" fill="#fff" opacity="0.35"/>
+          <rect x="38" y="42" width="52" height="56" rx="8" fill="#fff" opacity="0.6"/>
+          <rect x="48" y="48" width="52" height="56" rx="8" fill="#fff"/>
+          <circle cx="60" cy="62" r="4" fill="#2563EB"/><circle cx="72" cy="62" r="4" fill="#14B8A6"/>
+        </svg>
+        <h1>TabFlow</h1>
+      </div>
+      <div class="header-right">
+        <button id="btn-theme" class="icon-btn" title="Сменить тему">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+        </button>
+        <div class="time" id="clock">00:00</div>
+      </div>
+    </header>
+
+    <div id="crash-recovery" class="crash-banner" style="display: none;">
+      <span>Похоже, браузер закрылся некорректно. Восстановить последнюю сессию?</span>
+      <div class="crash-btns">
+        <button id="btn-restore">Восстановить</button>
+        <button id="btn-dismiss">Игнорировать</button>
+      </div>
+    </div>
+
+    <main>
+      <div class="search-box">
+        <input id="search" type="text" placeholder="Поиск по вкладкам или введите URL...">
+      </div>
+      <div id="results" class="results"></div>
+      <div class="grid">
+        <div class="card workspaces-card">
+          <h2>Рабочие пространства</h2>
+          <div class="ws-item favorite-item" id="ws-favorites">
+  <span class="ws-name">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#eab308" stroke-width="2" style="margin-right: 8px; vertical-align: text-bottom;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+    Избранное <span id="fav-count" style="color:var(--text-muted); font-weight:normal; margin-left:8px;"></span>
+  </span>
+</div>
+<div class="ws-divider"></div>
+<div id="ws-list" class="ws-list"></div>
+        </div>
+        <div class="card stats-card">
+          <h2>Статистика</h2>
+          <div class="stat">
+            <span class="stat-value" id="stat-total">0</span>
+            <span class="stat-label">Всего вкладок</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" id="stat-dup">0</span>
+            <span class="stat-label">Дубликатов</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="newtab.js"></script>
+</body>
+</html>
+

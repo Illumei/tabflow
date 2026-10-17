@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header-bar">
+    <div class="search-wrap">
+      <input id="search" type="text" placeholder="Поиск по вкладкам…" autofocus>
+    </div>
+    <button id="btn-theme" class="icon-btn" title="Сменить тему">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+    </button>
+  </div>
+  
+  <div id="results" class="results"></div>
+
+  <div class="workspaces-section">
+    <div class="ws-header">
+      <span>Рабочие пространства</span>
+      <button id="btn-show-save">＋ Сохранить</button>
+    </div>
+    
+    <!-- Статичное Избранное -->
+    <div class="ws-item favorite-item" id="ws-favorites">
+      <span class="ws-name">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#eab308" stroke-width="2" style="margin-right: 6px; vertical-align: text-bottom;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        Избранное <span id="fav-count" style="color:var(--text-muted); font-weight:normal;"></span>
+      </span>
+    </div>
+    
+    <div class="ws-divider"></div>
+
+    <div id="ws-list" class="ws-list"></div>
+    
+    <div id="ws-form" class="ws-form">
+      <input type="text" id="ws-name" placeholder="Имя (напр. Работа)">
+      <label class="ws-checkbox">
+        <input type="checkbox" id="ws-current-only"> Только текущее окно
+      </label>
+      <div class="ws-form-btns">
+        <button id="btn-do-save">Сохранить</button>
+        <button id="btn-cancel-save">Отмена</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button id="btn-suspend" title="Усыпить неактивные">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> Усыпить
+    </button>
+    <button id="btn-group" title="Сгруппировать по домену">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h5l2 3h13v10H2z"></path><path d="M2 7V4h5l2 3"></path></svg> Группы
+    </button>
+    <button id="btn-dupes" title="Закрыть дубликаты">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg> Дубли
+    </button>
+    <button id="btn-settings" title="Настройки">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+    </button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
